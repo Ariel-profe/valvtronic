@@ -1,0 +1,321 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* cursor: none; */
+}
+
+.gradient-01 {
+  background-image: linear-gradient(
+    270deg,
+    hsl(295deg 76% 51%) 0%,
+    hsl(284deg 70% 73%) 26%,
+    hsl(257deg 70% 86%) 39%,
+    hsl(202deg 92% 90%) 50%,
+    hsl(215deg 77% 81%) 61%,
+    hsl(221deg 73% 70%) 74%,
+    hsl(220deg 76% 51%) 100%
+  );
+  filter: blur(80px);
+}
+
+@media(min-width: 768px){
+  .gradient-01 {
+    filter: blur(100px);
+  }
+}
+
+.blue_gradient {
+  @apply bg-gradient-to-r from-slate-50 to-slate-200 bg-clip-text text-transparent;
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    97.86deg,
+    #a509ff 0%,
+    #34acc7 53.65%,
+    #a134c7 100%
+  );
+}
+
+.gradient-02 {
+  position: absolute;
+  width: 150px;
+  height: 238px;
+  top: 80px;
+  right: 0px;
+
+  background: #62b7c2;
+  filter: blur(120px);
+}
+
+@media(min-width: 768px){
+  .gradient-02 {
+    width: 300px;
+    height: 338px;
+    top: 40px;
+  }
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.gradient-03 {
+  position: absolute;
+  width: 28.125rem;
+  height: 28.125rem;
+  border-radius: 28.125rem;
+  left: 0;
+  top: 0;
+  z-index: 0;
+
+  background: #7c66e3;
+  filter: blur(180px);
+}
+
+.gradient-04 {
+  position: absolute;
+  width: 304px;
+  height: 100vh;
+  left: 30%;
+  top: 10%;
+
+  background: rgba(45, 72, 152, 0.75);
+  filter: blur(200px);
+  transform: rotate(-53.13deg);
+}
+
+.gradient-05 {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.feedback-gradient {
+  position: absolute;
+  width: 200px;
+  height: 316px;
+  left: 0px;
+  top: 0px;
+
+  background: #8d39a3;
+  filter: blur(175px);
+}
+
+.footer-gradient {
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  left: 60%;
+  bottom: 0;
+  z-index: 0;
+
+  background: #65c4fa;
+  filter: blur(150px);
+}
+
+/* HAMBURGER MENU */
+
+.burgerHeader{
+  padding: 3px;
+  position: relative;
+  z-index: 999;
+}
+
+.burgerButton{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #4A53A0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger{
+  width: 100%;
+}
+  
+.burger::after, .burger::before{
+  content: "";
+  display: block;
+  height: 2px;
+  width: 60%;
+  margin: auto;
+  background-color: #4A53A0;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.burger::after{
+  top: -5px;
+}
+
+.burger::before{
+  top: 5px;
+}
+
+.burgerActive::after{
+  transform: rotate(45deg);
+  top: -1px;
+}
+
+.burgerActive::before{
+  transform: rotate(-45deg);
+  top: 0px;
+}
+
+/* Product sliders */
+
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 140px;
+  width: 100%;
+  position: relative;
+}
+
+@media(min-width: 1280px){
+  .carousel-wrapper {
+    margin-top: 70px;
+  }
+}
+
+.carousel-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  margin: 0 auto;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+@media(min-width: 1280){
+  .carousel-content {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .carousel-item {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+/* ABOUT */
+
+.about-hero-img {
+  background-image:
+  linear-gradient(to bottom, rgba(47, 47, 48, 0.027) 50%, rgba(109, 5, 150, 0.781)),
+  url('../public/assets/about/hero.webp');
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+/* SERVICES */
+
+.services-hero-img {
+  background-image:
+  linear-gradient(to bottom, rgba(47, 47, 48, 0.027) 50%, rgba(109, 5, 150, 0.781)),
+  url('../public/assets/services/hero.webp');
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+/* CTV */
+
+.ctv-hero-img {
+  background-image:
+  linear-gradient(to bottom, rgba(47, 47, 48, 0.027) 50%, rgba(109, 5, 150, 0.781)),
+  url('../public/assets/ctv/hero.webp');
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+/* Vertical Carousel */
+
+.swiper {
+  width: 100%;
+  height: 400px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 70px;
+  color: #852A9B;
+  padding: 0 20px;
+}
+
+.swiper-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(min-width: 768px){
+  .swiper-content{
+    flex-direction: row;
+  }
+}
+
+.swiper-slide h3{
+  font-size: 30px;
+}
+
+.swiper-slide p{
+  font-size: 20px;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.swiper-button-next, .swiper-button-prev{
+  width: 10%;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  color: #616160;
+}

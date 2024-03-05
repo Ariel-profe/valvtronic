@@ -1,0 +1,160 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+}
+
+model Account {
+  id                 String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String  @db.ObjectId
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.String
+  access_token       String?  @db.String
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.String
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model User {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name     String?
+  email          String?   @unique
+  emailVerified  DateTime?
+  image          String?
+  hashedPassword String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  role           Role @default(USER)
+
+  accounts      Account[]
+}
+
+model Valve {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  slug String
+  description String
+  category String
+  images Image[]
+  isVisible Boolean @default(true)
+
+  subcategory ValveCategory
+  serie String
+  sizeRange String
+  temperatureRange String
+  operatingPressure String
+  shutterMaterial String
+  closureClassification String
+  bodyType String?
+  connectionRules String
+  certifications String
+  applications String
+  bodyMaterials String
+  stemMaterials String
+  seatMaterials String
+  standardDesign String
+  standardTests String
+
+  createdAt DateTime @default(now())
+}
+
+model Actuator {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  slug String
+  description String
+  category String
+  images Image[]
+  isVisible Boolean @default(true)
+
+  serie String
+  subcategory ActuatorsSubcategory
+  outputTorque String
+  temperatureRange String
+  inputPressure String
+  mounting String
+  standardDesign String
+  standardTests String
+  aplications String
+  controlOptions String
+  powerSupply String
+  casingClassification String
+  suppliedProduct String
+  certifications String
+  options String
+  valveCompatibility String
+  Volt String
+  entrySignal String
+  engine String
+  intOptions String
+
+  createdAt DateTime @default(now())
+}
+
+model Accesory {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  slug String
+  description String
+  category String
+  images Image[]
+  isVisible Boolean @default(true)
+
+  subcategory AccesorySubcategory
+  serie String
+  mounting String
+  temperatureRange String
+  connectionPort String
+  ports String
+  workCicle String
+  suppliedProduct String
+  controlOptions String
+  suppliedPressure String
+  aplications String
+  casing String
+
+  createdAt DateTime @default(now())
+}
+
+type Image {
+  id Int
+  color String
+  colorCode String
+  image String
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum ValveCategory {
+  butterfly
+  ball
+  retention
+  guillotine
+  locks
+  air
+  generalAplications
+}
+
+enum ActuatorsSubcategory {
+  manual
+  neumatic
+  electric
+  electrohydarulic
+}
+
+enum AccesorySubcategory {
+  neumatic
+}
