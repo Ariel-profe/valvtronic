@@ -18,12 +18,6 @@
   mask-size: 50%;
 }
 
-.stickyMask img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
 .text {
   position: absolute;
   inset: 0;

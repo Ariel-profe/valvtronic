@@ -10,7 +10,7 @@ export const VxClipMask = () => {
   const [viewText, setViewText] = useState(false);
 
   const initialMaskSize = 1;
-  const targetMaskSize = 30;
+  const targetMaskSize = 20;
   const easing = 0.65;
   let easedScrollProgress = 0;
 

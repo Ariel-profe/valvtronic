@@ -7,7 +7,7 @@ import { Trainnings } from "../components/services/Trainings";
 
 const ServicesPage = () => {
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto px-3 lg:px-6">
       <Hero />
       <Support />
       <Meetings />

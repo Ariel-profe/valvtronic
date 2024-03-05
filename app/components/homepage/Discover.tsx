@@ -12,7 +12,7 @@ export const Discover = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`container mx-auto w-full flex flex-col px-3`}
+        className={`px-3 lg:px-6 w-full flex flex-col`}
       >
         <TypingText title="| Ferias internacionales" textStyles="text-center" />
         <TitleText

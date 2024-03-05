@@ -15,10 +15,10 @@ export const Hero = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="w-full lg:w-1/2"
+      className="w-full lg:w-1/2 px-3 lg:px-6"
     >
       <div className={`flex  flex-col relative z-10 lg:mt-20 ${exo.className}`} >
-        <h1 className='text-4xl xl:text-8xl mb-5 text-primary-purple'>Experiencia en movimiento</h1>
+        <h1 className='text-4xl xl:text-8xl mb-5 text-primary-purple'>Experiencia <br /> en <br /> movimiento</h1>
         <p className='text-lg lg:text-3xl text-primary-dark-grey'>Productos de alta calidad, recursos humanos profesionales y respaldo internacional para tu próximo proyecto.</p>
       </div>
     </motion.div>

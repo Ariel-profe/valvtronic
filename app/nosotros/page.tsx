@@ -7,7 +7,7 @@ import { Hero } from '../components/about/Hero';
 import { Purpose } from '../components/about/Purpose';
 
 const About = () => (
-  <section className="container mx-auto">
+  <section className="container mx-auto px-3 lg:px-6">
     <Hero />
     <Purpose />
     <Accordion />

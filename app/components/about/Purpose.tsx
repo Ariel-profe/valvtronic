@@ -11,7 +11,7 @@ export const Purpose = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`container mx-auto flex justify-center items-center flex-col mt-20 px-3`}
+      className={`container mx-auto flex justify-center items-center flex-col mt-20 px-3 lg:px-6`}
     >
       <TypingText title="| Nuestro propósito" textStyles="text-center" />
       <TitleText

@@ -44,7 +44,7 @@ export const Accordion = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className='flex flex-col gap-5 w-full px-3'
+            className='flex flex-col gap-5 w-full'
         >
             {attributes.map( attribute => (
                 <div key={attribute.id} className='border-2 border-primary-dark-grey/40 px-6 py-3 rounded-xl'>

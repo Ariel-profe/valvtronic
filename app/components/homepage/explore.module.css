@@ -44,6 +44,10 @@
     fill: #fcfbfb;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   }
+
+  .card .img-content img {
+    width: 100%;
+  }
   
   .card .content {
     position: absolute;
@@ -74,5 +78,4 @@
   .card:hover .img-content svg {
     fill: white;
   }
-  
 }

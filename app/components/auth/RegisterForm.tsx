@@ -109,13 +109,13 @@ export const RegisterForm = ({user}:{user:IUser | null})  => {
             required
         />
 
-        <div data-scroll data-scroll-speed={0.1}>
-            <RoundedButton 
-                backgroundColor='#4A53A0'
-                text={isLoading ? <Loading /> : "Registrarme"}
-                onClick={handleSubmit(onSubmit)}
-            />
-        </div>
+        <button 
+            className='flex items-center gap-x-3 group text-[#8115FF] md:hover:bg-[#8115FF] md:hover:text-white w-fit px-3 py-2 rounded-full transition-all'
+            onClick={handleSubmit(onSubmit)}
+        >
+            <span className='text-xl md:group-hover:text-white transition'>{isLoading ? <Loading /> : "Registrarme"}</span>
+            <IoIosArrowForward />
+        </button>
 
         <p className='text-sm lg:text-xl text-primary-dark-grey'>
             ¿Ya tienes una cuenta? <Link href={"/login"} className='underline hover:text-primary-purple transition'>Iniciar sesión</Link>

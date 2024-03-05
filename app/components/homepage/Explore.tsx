@@ -10,13 +10,13 @@ import { ExploreCard } from './ExploreCard';
 export const Explore = () => {
 
   return (
-    <section className={`px-3 lg:py-10 overflow-hidden py-20 lg:mt-32`} id="explore">
+    <section className={`px-3 lg:px-6 lg:py-10 overflow-hidden py-20 lg:mt-32`} id="explore">
       <motion.div
         variants={staggerContainer(1,0.2)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`2xl:max-w-[1440px] w-full mx-auto flex flex-col`}
+        className={`w-full mx-auto flex flex-col`}
       >
         <TypingText title="| Innovación y avance tecnológico" textStyles="text-center" />
         <TitleText

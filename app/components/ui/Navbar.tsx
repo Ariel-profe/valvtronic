@@ -8,8 +8,7 @@ import { SearchBar } from './SearchBar';
 export const Navbar = () => {
 
 return (
-  <nav className='px-3 py-4 relative z-30 shadow-md'>
-    <div className='container w-full mx-auto flex justify-between items-center gap-8'>
+  <nav className='container w-full mx-auto flex justify-between items-center p-3'>
     <Menu />
     <Link href={'/'} className="font-extrabold text-[24px] leading-[30.24px] text-slate-800 dark:text-slate-300 hidden md:flex z-20">
       <img src="/assets/logo/logo-color.svg" alt="logo-vx" className='w-full' />
@@ -19,7 +18,6 @@ return (
         <ThemeToggle />
         <User />
       </div>
-    </div>
   </nav>
 )
 
