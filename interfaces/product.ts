@@ -1,35 +1,47 @@
 
-export interface IProduct {
-    id: number;
-    name: string;
+export interface IValve {
+    id: string; 
     slug: string;
-    brand: string;
-    category: string;
-    description: string,
-    images: IProductImage[];
-    tags: string[];
+    description: string;
+    images: string[];
     status: boolean;
-    is_featured: boolean;
-    created_at: Date;
-
-    design_standard: string;
-    diameter: string;
-    pressure_classes: string;
-    connections: string;
-    drives: string[];
-    body:string;
-    disc_axis: string;
-    seat: string;
+    
+    category: string;
+    serie: string;
+    sizeRange: string;
+    temperatureRange: string;
+    operatingPressure: string;
+    shutterMaterial: string;
+    closureClassification: string;
+    bodyType: string;
+    connectionRules: string;
+    certifications: string;
+    applications: string;
+    bodyMaterials: string;
+    stemMaterials: string;
+    seatMaterials: string;
+    standardDesign: string;
+    standardTests: string;
+    createdAt: string;
 };
 
-export interface IProductParams {
+export interface IProduct {
+    title: string;
+    description: string;
+    images: string;
+    category: string;
+    slug: string;
+}
+
+
+export interface IValveParams {
     id?: string | null;
     category?: string | null;
     searchTerm?: string | null;
 };
 
-export interface IProductImage {
-    color: string;
-    colorCode: string;
-    image: string;
-};
+// export interface IProductImage {
+//     color: string;
+//     colorCode: string;
+//     image: string;
+// };

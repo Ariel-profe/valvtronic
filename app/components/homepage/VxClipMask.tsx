@@ -1,13 +1,12 @@
 'use client';
 
 import styles from './vxClipMask.module.css'
-import { useRef, useEffect, useCallback, useState } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 
 export const VxClipMask = () => {
 
   const container = useRef<HTMLDivElement>(null);
   const stickyMask = useRef<HTMLDivElement>(null);
-  const [viewText, setViewText] = useState(false);
 
   const initialMaskSize = 1;
   const targetMaskSize = 30;

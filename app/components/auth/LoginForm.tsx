@@ -1,21 +1,18 @@
 "use client";
 
-import { MouseEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import { useForm, FieldValues, SubmitHandler } from 'react-hook-form';
-import { AiOutlineGoogle } from 'react-icons/ai';
 import toast from 'react-hot-toast';
 
 import { Input } from "../ui/Input";
-import { Button } from '../ui/Button';
 import { IUser } from '@/interfaces/user';
 import { Heading } from '../ui/Heading';
 import { Loading } from '../ui/Loading';
 import { FaGoogle } from 'react-icons/fa6';
 import { IoIosArrowForward } from 'react-icons/io';
-import { RoundedButton } from '../ui/RoundedButton';
 
 export const LoginForm = ({user}:{user:IUser | null}) => {
 
@@ -56,7 +53,7 @@ export const LoginForm = ({user}:{user:IUser | null}) => {
     };    
 
     if(user){
-        return <p className='text-center text-slate-100'>Ya está conectado...</p>
+        return <p className='text-center text-red-600 text-xl lg:text-2xl'>Ya está conectado. Redireccionando...</p>
     };
 
   return (

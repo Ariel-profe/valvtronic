@@ -1,17 +1,16 @@
+import './globals.css';
 import type { Metadata } from 'next'
-import './globals.css'
+import { montserrat } from './fonts';
 
 import { Footer } from './components/ui/Footer';
-import {Navbar} from './components/ui/Navbar';
+import { Navbar } from './components/ui/Navbar';
 import { Toaster } from 'react-hot-toast';
 import { ButtonToTop } from './components/ui/ButtonToTop';
-import { montserrat } from './fonts';
-import  Providers from './providers/providers';
-import { CustomCursor } from './components/ui/CustomCursor';
+import { Providers } from './providers/providers';
 
 export const metadata: Metadata = {
   title: 'Valvtronic',
-  description: 'Valvtronic Mendoza',
+  description: 'Valvtronic Mendoza'
 }
 
 export default function RootLayout({
@@ -22,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={montserrat.className}>
+      <link rel="icon" href="/assets/logo/vx-blanco.svg" sizes="any" />
         <Providers>
           <div className='bg-gradient-to-br from-[#D6DEE5] dark:from-slate-900 via-[#E4EAEF] dark:via-slate-800 to-[#F8FAFC] dark:to-slate-700 text-primary-blue dark:text-slate-200'>
             <Toaster toastOptions={{

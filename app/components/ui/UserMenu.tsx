@@ -24,6 +24,7 @@ export const UserMenu:FC<Props> = ({user}) => {
     const toggleOpen = useCallback(() => {
     setIsOpen( prev => !prev);
     }, []);
+
     return (
     <>
     <div className="relative z-30 border border-primary-blue rounded-full">

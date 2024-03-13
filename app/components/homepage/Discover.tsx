@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { TypingText, TitleText } from "../ui/CustomText"
 import { staggerContainer } from "@/utils/motion";
+import { motion } from "framer-motion";
+import { TypingText, TitleText } from "../ui/CustomText";
 import { DiscoverCard } from "./DiscoverCard";
 
 export const Discover = () => {

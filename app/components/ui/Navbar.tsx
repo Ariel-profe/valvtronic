@@ -5,7 +5,7 @@ import { User } from './User';
 import { ThemeToggle } from './ThemeToggle';
 import { SearchBar } from './SearchBar';
 
-export const Navbar = () => {
+export const Navbar = async() => {
 
 return (
   <nav className='container w-full mx-auto flex justify-between items-center p-3'>

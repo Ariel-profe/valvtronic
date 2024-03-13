@@ -12,7 +12,7 @@ export const Avatar:FC<Props> = ({src}) => {
         return <img
             src={src}
             alt='avatar'
-            className="rounded-full"
+            className="rounded-full h-[24px]"
         />
     }
 

@@ -16,7 +16,6 @@ import { Loading } from '../ui/Loading';
 import { isEmail } from '@/utils/contact';
 import { FaGoogle } from 'react-icons/fa6';
 import { IoIosArrowForward } from 'react-icons/io';
-import { RoundedButton } from '../ui/RoundedButton';
 
 export const RegisterForm = ({user}:{user:IUser | null})  => {
 
@@ -42,7 +41,7 @@ export const RegisterForm = ({user}:{user:IUser | null})  => {
         
         axios.post('/api/register', data)
         .then(() => {
-            toast.success('Te has registrado con éxito');
+            toast.success('Cuenta creada');
             
             signIn('credentials', {
                 email: data.email,
@@ -61,9 +60,11 @@ export const RegisterForm = ({user}:{user:IUser | null})  => {
             })
             setIsLoading(false);
         })
-        .catch(() => {
-            toast.error('Ups! Algo salió mal...')
-            setIsLoading(false)
+        .catch((error) => {
+            console.log(error);            
+            toast.error(error.response.data.error);
+            setIsLoading(false);
+
         })
         .finally(() => {
             setIsLoading(false);
@@ -71,7 +72,7 @@ export const RegisterForm = ({user}:{user:IUser | null})  => {
     };  
     
     if(user){
-        return <p className='text-center text-slate-100'>Ya está conectado...</p>
+        return <p className='text-center text-xl lg:text-2xl text-red-600'>Ya está conectado. Redireccionando...</p>
     };
 
   return (

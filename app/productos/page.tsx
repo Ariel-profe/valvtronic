@@ -1,14 +1,27 @@
-import { products } from "@/database/products"
-import { ProductCard } from "../components/products/ProductCard"
-import Link from "next/link"
+import { getValves } from "@/actions/valves";
+import { IValveParams } from '@/interfaces/product';
+import { NullData } from "../components/ui/NullData";
+import { ProductCard } from "../components/products/ProductCard";
 
-const ProductsPage = () => {
-  return (
-    <div className='container mx-auto px-2 h-[80vh] flex flex-col items-center justify-center gap-5'>
-        <h2 className="text-2xl lg:text-4xl">Esta página se encuentra en construcción</h2>
-        <Link href="/" className="text-xl lg:text-2xl underline md:hover:text-primary-purple md:hover:scale-110 transition">Volver al inicio</Link>
-    </div>
-  )
+interface Props {
+  searchParams: IValveParams;
 }
 
-export default ProductsPage
+export default async function ProductsPage({searchParams}:Props){
+
+  const valves = await getValves(searchParams);
+
+  if(valves?.length === 0){
+    return <NullData title={"No hay productos. Seleccione 'Todos' para limpiar los filtros"} />
+  }
+
+  return (
+    <div className="p-8">
+      <div className="flex items-center flex-wrap gap-5">
+        {valves?.map( valve => (
+          <ProductCard product={valve} />
+        ))}
+      </div>
+    </div>
+  )
+};

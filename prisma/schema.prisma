@@ -28,7 +28,7 @@ model Account {
 
 model User {
   id             String    @id @default(auto()) @map("_id") @db.ObjectId
-  name     String?
+  name           String?
   email          String?   @unique
   emailVerified  DateTime?
   image          String?
@@ -36,6 +36,7 @@ model User {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   role           Role @default(USER)
+  status         Boolean @default(true)
 
   accounts      Account[]
 }
@@ -44,11 +45,10 @@ model Valve {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   slug String
   description String
-  category String
-  images Image[]
-  isVisible Boolean @default(true)
+  images String[]
+  status Boolean @default(true)
 
-  subcategory ValveCategory
+  category ValveCategory
   serie String
   sizeRange String
   temperatureRange String
@@ -74,8 +74,8 @@ model Actuator {
   slug String
   description String
   category String
-  images Image[]
-  isVisible Boolean @default(true)
+  images String[]
+  status Boolean @default(true)
 
   serie String
   subcategory ActuatorsSubcategory
@@ -107,8 +107,8 @@ model Accesory {
   slug String
   description String
   category String
-  images Image[]
-  isVisible Boolean @default(true)
+  images String[]
+  status Boolean @default(true)
 
   subcategory AccesorySubcategory
   serie String
@@ -126,12 +126,12 @@ model Accesory {
   createdAt DateTime @default(now())
 }
 
-type Image {
-  id Int
-  color String
-  colorCode String
-  image String
-}
+// type Image {
+//   id Int
+//   color String
+//   colorCode String
+//   image String
+// }
 
 enum Role {
   USER
@@ -145,7 +145,7 @@ enum ValveCategory {
   guillotine
   locks
   air
-  generalAplications
+  special
 }
 
 enum ActuatorsSubcategory {

@@ -1,9 +1,11 @@
 
 import { FormWrap } from '../components/ui/FormWrap'
 import { LoginForm } from '../components/auth/LoginForm'
-// import { getUser } from '@/actions/user'
+import { getUser } from '@/actions/user';
 
-const LoginPage = () => {
+const LoginPage = async() => {
+
+  const currentUser = await getUser();
 
   return (
       <div className='container mx-auto grid md:grid-cols-2 gap-2 mt-10 lg:mt-14'>
@@ -11,7 +13,7 @@ const LoginPage = () => {
           <img src="/assets/images/login.webp" alt="login-imagen" className='h-full object-cover' />
         </div>
         <FormWrap>
-          <LoginForm user={null} />
+          <LoginForm user={currentUser} />
         </FormWrap>
       </div>
   )
