@@ -26,22 +26,17 @@ export interface IValve {
 };
 
 export interface IProduct {
-    title: string;
+    id: number;
+    serie: string;
     description: string;
-    images: string;
+    images: string[];
     category: string;
     slug: string;
+    status: boolean;
 }
 
-
-export interface IValveParams {
+export interface IProductParams {
     id?: string | null;
-    category?: string | null;
+    categoria?: string | null;
     searchTerm?: string | null;
 };
-
-// export interface IProductImage {
-//     color: string;
-//     colorCode: string;
-//     image: string;
-// };

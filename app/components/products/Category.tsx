@@ -2,38 +2,40 @@
 
 import { FC, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import qs from 'query-string';
+
 import { ICategory } from "@/interfaces/category";
-import qs from 'query-string'
 
 interface Props {
     category: ICategory;
     selected?: boolean; 
+    categoryProduct: string
 }
 
-export const CategoryItem:FC<Props> = ({category, selected}) => {
+export const Category:FC<Props> = ({category, selected, categoryProduct}) => {
 
     const {name} = category;
 
     const params = useSearchParams();
-    const router = useRouter();
+    const router = useRouter();    
 
     const handleClick = useCallback(() => {
-        if(name === 'all'){
-            router.push("/")
+        if(name === 'todas'){
+            router.push(`/productos/${categoryProduct}`)
         } else{
-            let currenQuery = {};
+            let currentQuery = {};
 
             if(params){
-                currenQuery = qs.parse(params.toString());
+                currentQuery = qs.parse(params.toString());
             }
 
             const updatedQuery:any = {
-                ...currenQuery,
-                category: name
+                ...currentQuery,
+                categoria: name
             }
 
             const url = qs.stringifyUrl({
-                url: '/',
+                url: `/productos/${categoryProduct}`,
                 query: updatedQuery
             }, {
                 skipNull: true
@@ -41,16 +43,13 @@ export const CategoryItem:FC<Props> = ({category, selected}) => {
 
             router.push(url);
         };
-
-
-    }, [router, name, params])
+    }, [router, name, params, categoryProduct])
 
   return (
     <div 
         className={`flex items-center justify-center text-center gap-1 p-2 border-b-2 hover:text-slate-800 transition cursor-pointer ${selected ? 'border-b-slate-800 text-slate-800' : 'border-transparent text-slate-500'}`}
         onClick={handleClick}
     >
-        {/* <Icon size={20} /> */}
         <span className="font-medium text-sm capitalize">{name}</span>
     </div>
   )

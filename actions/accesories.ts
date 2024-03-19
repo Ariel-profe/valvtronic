@@ -1,7 +1,7 @@
 import prisma from '@/libs/prisma-db';
 import { IProductParams } from "@/interfaces/product";
 
-export const getValves = async(params: IProductParams) => {
+export const getAccesories = async(params: IProductParams) => {
     try {
         const {categoria, searchTerm} = params;
 
@@ -17,7 +17,7 @@ export const getValves = async(params: IProductParams) => {
             query.category = categoria;
         }
 
-        const valves = await prisma.valve.findMany({
+        const products = await prisma.accesory.findMany({
             where: {
                 ...query,
                 OR: [
@@ -35,25 +35,19 @@ export const getValves = async(params: IProductParams) => {
             }
         });
 
-        if(!valves) return null;
+        if(!products) return null;
 
-        return valves;
+        return products;
 
     } catch (error:any) {
         throw new Error(error);
     }
 };
 
-interface IParams {
-    slug?: string;
-}
-
-export const getValveBySlug = async(params: IParams) => {
+export const getAccesoryBySlug = async(slug: string) => {
 
     try {
-        const {slug} = params;
-
-        const product = await prisma.valve.findFirst({
+        const product = await prisma.accesory.findFirst({
             where: {
                 slug
             }

@@ -1,27 +1,13 @@
-import { getValves } from "@/actions/valves";
-import { IValveParams } from '@/interfaces/product';
-import { NullData } from "../components/ui/NullData";
-import { ProductCard } from "../components/products/ProductCard";
+import { FC } from "react";
+import { Categories } from "../components/products/Categories";
 
-interface Props {
-  searchParams: IValveParams;
+const ProductsPage = () => {
+ 
+  return (
+    <section className="container mx-auto px-3 lg:px-6 lg:py-20">
+      <Categories />
+    </section>
+  )
 }
 
-export default async function ProductsPage({searchParams}:Props){
-
-  const valves = await getValves(searchParams);
-
-  if(valves?.length === 0){
-    return <NullData title={"No hay productos. Seleccione 'Todos' para limpiar los filtros"} />
-  }
-
-  return (
-    <div className="p-8">
-      <div className="flex items-center flex-wrap gap-5">
-        {valves?.map( valve => (
-          <ProductCard product={valve} />
-        ))}
-      </div>
-    </div>
-  )
-};
+export default ProductsPage

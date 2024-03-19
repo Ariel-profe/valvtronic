@@ -3,11 +3,5 @@ export interface ICategory {
     id: number;
     name: string;
     href: string;
-    subcategories?: ISubCategory[]
+    img?: string;
 };
-
-export interface ISubCategory {
-    id: number;
-    name: string;
-    href: string;
-}

@@ -70,58 +70,49 @@ model Valve {
 
 model Actuator {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  name String
   slug String
   description String
-  category String
   images String[]
   status Boolean @default(true)
 
   serie String
-  subcategory ActuatorsSubcategory
+  category ActuatorCategory
   outputTorque String
   temperatureRange String
-  inputPressure String
+  pressureRange String
   mounting String
   standardDesign String
   standardTests String
   aplications String
   controlOptions String
   powerSupply String
-  casingClassification String
-  suppliedProduct String
   certifications String
-  options String
   valveCompatibility String
-  Volt String
-  entrySignal String
-  engine String
-  intOptions String
+  strokeLimit String
+  otherSpec String
 
   createdAt DateTime @default(now())
 }
 
 model Accesory {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  name String
   slug String
   description String
-  category String
   images String[]
   status Boolean @default(true)
 
-  subcategory AccesorySubcategory
+  category AccesoryCategory
   serie String
-  mounting String
-  temperatureRange String
-  connectionPort String
-  ports String
-  workCicle String
-  suppliedProduct String
-  controlOptions String
-  suppliedPressure String
-  aplications String
-  casing String
+  feedPressure Boolean
+  inputSignal Boolean
+  connections Boolean
+  mounting Boolean
+  temperatureRange Boolean
+  protectionDegree Boolean
+  intrinsicSafety Boolean
+  applications Boolean
+  certifications Boolean
+  otherSpec Boolean
 
   createdAt DateTime @default(now())
 }
@@ -139,22 +130,22 @@ enum Role {
 }
 
 enum ValveCategory {
-  butterfly
-  ball
-  retention
-  guillotine
-  locks
-  air
-  special
+  mariposas
+  esfericas
+  retencion
+  guillotina_y_compuertas
+  esclusas
+  aire
+  aplicaciones_especiales
 }
 
-enum ActuatorsSubcategory {
+enum ActuatorCategory {
   manual
-  neumatic
-  electric
-  electrohydarulic
+  neumaticos
+  electricos
+  electrohidraulicos
 }
 
-enum AccesorySubcategory {
-  neumatic
+enum AccesoryCategory {
+  neumaticos
 }

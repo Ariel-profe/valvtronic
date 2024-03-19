@@ -4,110 +4,108 @@ import { ICategory } from "@/interfaces/category";
 export const categories: ICategory[] = [
     {
         id: 1,
-        name: "todas",
-        href: "todas",
+        name: 'valvulas',
+        href: '/productos/valvulas',
+        img: '/products/vxs.png'
     },
     {
         id: 2,
-        name: "válvulas",
-        href: 'valvulas',
-        subcategories: [
-            {
-                id: 1,
-                name: 'mariposa',
-                href: 'mariposa'
-            },
-            {
-                id: 2,
-                name: 'esféricas',
-                href: 'esfericas'
-            },
-            {
-                id: 3,
-                name: 'de retención',
-                href: 'de_retencion'
-            },
-            {
-                id: 4,
-                name: 'guillotina y compuertas',
-                href: 'guillotina_y_compuertas'
-            },
-            {
-                id: 5,
-                name: 'globo',
-                href: 'globo'
-            },
-            {
-                id: 6,
-                name: 'esclusas',
-                href: 'esclusas'
-            },
-            {
-                id: 7,
-                name: 'de aire',
-                href: 'de_aire'
-            },
-        ]
+        name: 'actuadores',
+        href: '/productos/actuadores',
+        img: '/products/serie-20-21.png'
     },
     {
         id: 3,
-        name: "actuadores",
-        href: 'actuadores',
-        subcategories: [
-            {
-                id: 1,
-                name: 'accionamientos manuales',
-                href: 'accionamientos_manuales'
-            },
-            {
-                id: 2,
-                name: 'neumáticos',
-                href: 'neumaticos'
-            },
-            {
-                id: 3,
-                name: 'eléctricos',
-                href: 'electricos'
-            },
-            {
-                id: 4,
-                name: 'electrohidráulicos',
-                href: 'electrohidraulicos'
-            },
-        ]
+        name: 'accesorios',
+        href: '/productos/accesorios',
+        img: '/products/serie-22-23.png'
+    },
+]
+
+export const valvesCategories = [
+    {
+        id: 0,
+        name: 'todas',
+        href: 'todas'
+    },
+    {
+        id: 1,
+        name: 'mariposas',
+        href: 'mariposas'
+    },
+    {
+        id: 2,
+        name: 'esfericas',
+        href: 'esfericas'
+    },
+    {
+        id: 3,
+        name: 'retencion',
+        href: 'retencion'
     },
     {
         id: 4,
-        name: "accesorios",
-        href: 'accesorios',
-        subcategories: [
-            {
-                id: 1,
-                name: 'posicionadores',
-                href: 'posicionadores'
-            },
-            {
-                id: 2,
-                name: 'Solenoides',
-                href: 'solenoides'
-            },
-            {
-                id: 3,
-                name: 'filtros',
-                href: 'filtros'
-            },
-        ]
+        name: 'guillotina_y_compuertas',
+        href: 'guillotina_y_compuertas'
     },
     {
         id: 5,
-        name: "sistemas de control",
-        href: 'sistemas_de_control',
-        subcategories: [
-            {
-                id: 1,
-                name: 'tableros' ,
-                href: 'tableros'
-            }
-        ]
+        name: 'esclusas',
+        href: 'esclusas'
+    },
+    {
+        id: 6,
+        name: 'aire',
+        href: 'aire'
+    },
+    {
+        id: 7,
+        name: 'aplicaciones_especiales',
+        href: 'aplicaciones_especiales'
+    },
+];
+
+    
+export const actuatorsCategories = [
+    {
+        id: 0,
+        name: 'todas',
+        href: 'todas'
+    },
+    {
+        id: 1,
+        name: 'manual',
+        href: 'manual'
+    },
+    {
+        id: 2,
+        name: 'neumaticos',
+        href: 'neumaticos'
+    },
+    {
+        id: 3,
+        name: 'electricos',
+        href: 'electricos'
+    },
+    {
+        id: 4,
+        name: 'electrohidraulicos',
+        href: 'electrohidraulicos'
     }
 ];
+        
+export const accesoriesCategories = [
+    {
+        id: 0,
+        name: 'todas',
+        href: 'todas'
+    },
+    {
+        id: 1,
+        name: 'neumaticos',
+        href: 'neumaticos'
+    }
+];
+
+  
+    
