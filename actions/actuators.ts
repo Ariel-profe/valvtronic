@@ -20,7 +20,18 @@ export const getActuators = async(params: IProductParams) => {
         const products = await prisma.actuator.findMany({
             where: {
                 ...query,
-               
+                OR: [
+                    {
+                        serie: {
+                            contains: searchString,
+                            mode: 'insensitive'
+                        },
+                        description: {
+                            contains: searchString,
+                            mode: 'insensitive'
+                        },
+                    }
+                ]
             }
         });
 

@@ -9,6 +9,8 @@ interface Props {
   searchParams: IProductParams;
 }
 
+export const revalidate = 0
+
 export default async function ValvesPage({searchParams}:Props){
 
   const products = await getValves(searchParams);

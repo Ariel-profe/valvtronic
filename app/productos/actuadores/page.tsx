@@ -8,6 +8,8 @@ interface Props {
   searchParams: IProductParams;
 }
 
+export const revalidate = 0
+
 const ActuatorsPage = async({searchParams}:Props) => {
 
   const products = await getActuators(searchParams);
