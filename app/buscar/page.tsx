@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { IProductParams } from "@/interfaces/product";
 import { NullData } from "../components/ui/NullData";
