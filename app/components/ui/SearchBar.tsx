@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import queryString from "query-string";
 import { KeyboardEventHandler } from "react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 export const SearchBar = () => {
 
@@ -19,9 +19,9 @@ export const SearchBar = () => {
         }
     });
 
-    const onSearchTerm = (searchTerm:KeyboardEventHandler<HTMLInputElement>) => {  
+    const onSearchTerm = (searchTerm:KeyboardEventHandler<HTMLInputElement> | undefined) => {  
 
-        if( searchTerm.length === 0) return;
+        if( searchTerm?.length === 0) return;
 
         return router.push(`/buscar?searchTerm=${ searchTerm }`);
     }
@@ -49,7 +49,7 @@ return (
 
     <div>
         <input
-            onKeyDown={ (e) => e.code === "Enter" ? onSearchTerm(e.target.value.trim()) : null }
+            // onKeyDown={ (e) => e.code === "Enter" ? onSearchTerm(e.target.value.trim()) : null }
             {...register('searchTerm')} 
             type="text"
             autoComplete="off"
