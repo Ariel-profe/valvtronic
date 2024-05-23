@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { staggerContainer } from '@/utils/motion';
 import { exo } from '@/app/fonts';
@@ -22,9 +22,17 @@ export const Carousel = () => {
  const [CenterId, setCenterId] = useState(0);
  const [LeftId, setLeftId] = useState(Data.length - 1);
  const [RightId, setRightId] = useState(1);
- const [index, setIndex] = useState(0);
+ const [newHeader, setNewHeader] = useState("Para un mercado competitivo");
+ const [newSubHeader, setNewSubHeader] = useState("VX participa en la realización de proyectos de diferentes mercados: Oil&Gas, Industrias, Agua y Saneamiento y Minería.");
  
  const screenWidth = window.screen.width;
+
+ const shuffle = useCallback(() => {
+  const index = Math.floor(Math.random() * headers.length);
+  const index1 = Math.floor(Math.random() * subheaders.length);
+  setNewHeader(headers[index]);
+  setNewSubHeader(subheaders[index1]);
+}, []);
 
  const nextBtn = () => {
   if (LeftId === Data.length - 1) {
@@ -64,18 +72,14 @@ export const Carousel = () => {
   }
  };
 
+ useEffect(() => {
+  const intervalID = setInterval(shuffle, 6000);
+  return () => clearInterval(intervalID);
+}, [shuffle])
+
+
   useEffect(() => {
     let interval:any;
-
-    interval = setInterval(() => {
-      setIndex(function (prev):any {
-        if (prev === 1) {
-          setIndex(0);
-        } else {
-          setIndex(prev + 1);
-        }
-      });
-    }, 6000);
 
     const timerId = setInterval(() => nextBtn(), 6000);
     return () => {
@@ -148,8 +152,8 @@ export const Carousel = () => {
       className="w-full lg:w-2/3 px-3"
     >
       <div className={`flex flex-col relative z-10 lg:mt-20 ${exo.className}`} >
-        <h1 className='text-4xl xl:text-8xl mb-5 text-primary-blue'>{headers[index]}</h1>
-        <p className='text-lg lg:text-3xl text-primary-dark-grey max-w-[600px]'>{subheaders[index]}</p>
+        <h1 className='text-4xl xl:text-8xl mb-5 text-primary-blue'>{newHeader}</h1>
+        <p className='text-lg lg:text-3xl text-primary-dark-grey max-w-[600px]'>{newSubHeader}</p>
       </div>
     </motion.div>
   
