@@ -4,42 +4,6 @@ import { Valve } from '@prisma/client';
 import { getUser } from '@/actions/user';
 import { db } from '@/lib/db';
 
-export async function GET(req: Request){
-    try {
-        const { searchParams } = new URL(req.url)
-        const searchTerm = searchParams.get('searchTerm')
-
-        let searchString = searchTerm;
-
-        if(!searchTerm){
-            searchString = ''
-        }
-
-        let query:any = {};
-
-        const valves = await db.valve.findMany({
-            where: {
-                ...query,
-                OR: [
-                    {
-                        serie: {
-                            contains: searchString,
-                            mode: 'insensitive'
-                        }
-                    }
-                ]
-            }
-        });
-
-        if(!valves) return null;
-
-        return valves;
-
-    } catch (error:any) {
-        throw new Error(error);
-    }
-}
-
 export async function POST(req: Request){
 
     const user = await getUser();
