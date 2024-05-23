@@ -26,7 +26,8 @@ export const getValves = async(params: IProductParams) => {
                         serie: {
                             contains: searchString,
                             mode: 'insensitive'
-                        }
+                        },
+                        
                     }
                 ]
             }

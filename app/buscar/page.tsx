@@ -1,5 +1,3 @@
-"use server";
-
 import Link from "next/link";
 import { IProductParams } from "@/interfaces/product";
 import { NullData } from "../components/ui/NullData";
@@ -15,25 +13,22 @@ interface Props {
   searchParams: IProductParams;
 };
 
-const SearchPage = async({searchParams}:Props) => {  
+export const revalidate = 0
 
-  const valves: any = await getValves(searchParams);  
-  const actuators: any = await getActuators(searchParams);  
-  const accesories: any = await getAccesories(searchParams);  
+export default async function SearchPage({searchParams}:Props){  
 
-  const products = [...valves, ...actuators, ...accesories];  
+  // const valves: any = await getValves(searchParams);  
+  // const actuators: any = await getActuators(searchParams);  
+  // const accesories: any = await getAccesories(searchParams);  
+
+  // const products = [...valves, ...actuators, ...accesories];  
 
   return (
-    <div className="container mx-auto my-20 px-3">
-      <SearchBar />
+    <div className="container mx-auto my-20 px-3 flex flex-col items-center justify-center w-full h-[40vh]">
+      <h1 className="text-xl lg:text-3xl text-rose-600">Esta página aún se encuentra en construcción</h1>
 
-      {/* <h3 className="text-xl lg:text-3xl underline underline-offset-4 mt-10">O también puedes buscar por categorías:</h3> */}
-      {/* <SearchValve />
-      <SearchActuator /> */}
-
-      {/* {valves.length >= 1 && searchParams?.searchTerm?.length && <h3 className="text-xl lg:text-3xl my-10 text-primary-blue"> Resultados para: " {searchParams.searchTerm} " </h3>}
-
-      {valves.length >= 1 && searchParams?.category?.length && <h3 className="text-xl lg:text-3xl my-10 text-primary-blue"> Resultados para: " {searchParams.category} " </h3>} */}
+      <Link href={"/"} className="text-lg lg:text-2xl text-slate-600 mt-10">Volver al inicio</Link>
+      {/* <SearchBar />
       
       {products?.length === 0
           ? (<NullData title={`UPS! No encontramos ningún producto para "${searchParams.searchTerm}"`} />)
@@ -49,9 +44,7 @@ const SearchPage = async({searchParams}:Props) => {
                 <p className="capitalize">{product.category}</p>
               </Link>
             ))}
-          </div>)}
+          </div>)} */}
     </div>
   )
 };
-
-export default SearchPage

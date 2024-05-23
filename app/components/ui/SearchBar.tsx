@@ -19,7 +19,7 @@ export const SearchBar = () => {
         }
     });
 
-    const onSearchTerm = (searchTerm:KeyboardEventHandler<HTMLInputElement> | undefined) => {  
+    const onSearchTerm = (searchTerm:any) => {  
 
         if( searchTerm?.length === 0) return;
 
@@ -49,7 +49,7 @@ return (
 
     <div>
         <input
-            // onKeyDown={ (e) => e.code === "Enter" ? onSearchTerm(e.target.value.trim()) : null }
+            onKeyDown={ (e) => e.code === "Enter" ? onSearchTerm((e.target as HTMLInputElement).value.trim()) : null }
             {...register('searchTerm')} 
             type="text"
             autoComplete="off"

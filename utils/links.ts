@@ -26,11 +26,11 @@ export const links: ILink[] = [
         name: 'ctv',
         href: '/ctv',
     },
-    {
-        id: 5,
-        name: 'certificaciones',
-        href: '/certificaciones',
-    },
+    // {
+    //     id: 5,
+    //     name: 'certificaciones',
+    //     href: '/certificaciones',
+    // },
     {
         id: 6,
         name: 'contacto',
