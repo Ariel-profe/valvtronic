@@ -1,7 +1,5 @@
 import {NextResponse} from 'next/server';
 
-
-import { slugify } from '@/utils/slugify';
 import { Valve } from '@prisma/client';
 import { getUser } from '@/actions/user';
 import { db } from '@/lib/db';
