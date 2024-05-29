@@ -1,3 +1,44 @@
+export interface IProducts {
+id: string;
+slug: string;
+description: string;
+images: string[];
+status: boolean;
+category:string;
+serie: string;
+model: "valvulas" | "actuadores" | "accesorios";
+
+closureClassification?: string;
+shutterMaterial?: string;
+bodyType?: string;
+connectionRules?: string;
+temperatureRange?: string;
+sizeRange?: string;
+operatingPressure?: string;
+certifications?: string;
+applications?: string;
+bodyMaterials?: string;
+stemMaterials?: string;
+seatMaterials?: string;
+outputTorque?: string;
+pressureRange?: string;
+standardDesign?: string;
+standardTests?: string;
+aplications?: string;
+controlOptions?: string;
+powerSupply?: string;
+valveCompatibility?: string;
+strokeLimit?: string;
+feedPressure?: string;
+inputSignal?: string;
+connections?: string;
+mounting?: string;
+protectionDegree?: string;
+intrinsicSafety?: string;
+otherSpec?: string;
+createdAt?: string;
+}
+
 
 export interface IValve {
     id: string; 

@@ -1,50 +1,55 @@
-import Link from "next/link";
-import { IProductParams } from "@/interfaces/product";
-import { NullData } from "../components/ui/NullData";
-import { SearchBar } from "../components/ui/SearchBar";
+"use client";
 
-import { getValves } from "@/actions/valves";
-import { SearchValve } from "../components/products/SearchValve";
-import { SearchActuator } from "../components/products/SearchActuator";
-import { getActuators } from "@/actions/actuators";
-import { getAccesories } from "@/actions/accesories";
+import { products } from "@/data/products";
+import { useState } from "react";
+import { ProductTable } from "../components/products/ProductTable";
+import { IProducts } from "@/interfaces/product";
 
-interface Props {
-  searchParams: IProductParams;
-};
+const SearchPage = () => {
 
-export const revalidate = 0
+  const [query, setQuery] = useState("");
 
-export default async function SearchPage({searchParams}:Props){  
+  const keys = ["serie", "category", "model"];
 
-  // const valves: any = await getValves(searchParams);  
-  // const actuators: any = await getActuators(searchParams);  
-  // const accesories: any = await getAccesories(searchParams);  
+  const search = (data : IProducts[]) => { 
 
-  // const products = [...valves, ...actuators, ...accesories];  
+    return data.filter(
+      (item:any) => keys.some((key) => item[key].toLowerCase().includes(query))
+    )
+  }
 
   return (
-    <div className="container mx-auto my-20 px-3 flex flex-col items-center justify-center w-full h-[40vh]">
-      <h1 className="text-xl lg:text-3xl text-rose-600">Esta página aún se encuentra en construcción</h1>
+    <section className="container mx-auto px-3 lg:px-6 min-h-[50vh]">
+      <div className="flex relative items-center border-b border-primary-blue mt-10">
+        <input 
+          type="text" 
+          placeholder="¿Qué estás buscando?"
+          className="p-2 bg-transparent w-full focus:outline-none focus:border-none lg:text-2xl"
+          onChange={(e) => setQuery(e.target.value)}
+          />
 
-      <Link href={"/"} className="text-lg lg:text-2xl text-slate-600 mt-10">Volver al inicio</Link>
-      {/* <SearchBar />
-      
-      {products?.length === 0
-          ? (<NullData title={`UPS! No encontramos ningún producto para "${searchParams.searchTerm}"`} />)
-          : (<div className="grid grid-cols-2 gap-5 my-10 w-full">
-            {products?.map( (product:any) => (
-              <Link 
-                key={product.id}
-                href={`/productos/${product.model}/${product.slug}`}
-                className="flex items-center gap-x-2 text-xl md:hover:bg-primary-blue md:hover:text-white transition px-3 py-1 w-fit rounded-lg"
-              >
-                <h3 className="uppercase">{product.serie} -</h3>
-                <p className="capitalize">{product.model}</p>
-                <p className="capitalize">{product.category}</p>
-              </Link>
-            ))}
-          </div>)} */}
-    </div>
+        <div className="absolute right-0">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 lg:w-9 lg:h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </div>
+
+      {
+        query === ""
+          ? <div className="min-h-[50vh]" />
+          : <ProductTable data={search(products)} /> 
+      }
+    </section>
   )
-};
+}
+
+<div className="flex flex-col relative border-b border-primary-blue">
+
+<div>
+    
+
+</div>
+</div>
+
+export default SearchPage

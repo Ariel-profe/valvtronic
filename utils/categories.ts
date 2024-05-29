@@ -6,13 +6,13 @@ export const categories: ICategory[] = [
         id: 1,
         name: 'válvulas',
         href: '/productos/valvulas',
-        img: '/products/categories/cat-1.webp'
+        img: '/products/categories/valvulas.webp'
     },
     {
         id: 2,
         name: 'actuadores',
         href: '/productos/actuadores',
-        img: '/products/categories/cat-1.webp'
+        img: '/products/categories/actuadores.webp'
     },
     {
         id: 3,

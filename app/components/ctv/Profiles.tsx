@@ -12,9 +12,9 @@ export const Profiles = () => {
             />
         </div>
 
-        <div className='container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-20 place-content-center'>
+        <div className='mt-12 flex flex-col md:flex-row justify-center items-center gap-5'>
             {profiles.map( ({desc, id, img, name}) => (
-                    <SupportCard key={id} title={name} desc={desc} img={img} />
+              <SupportCard index={id} key={id} title={name} desc={desc} img={img} />
             ))}
         </div>
 

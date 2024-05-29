@@ -2,6 +2,7 @@ import { getAccesories } from "@/actions/accesories";
 import { AccesoriesCategories } from "@/app/components/products/AccesoriesCategories";
 import { ProductCard } from "@/app/components/products/ProductCard";
 import { NullData } from "@/app/components/ui/NullData";
+import { exo } from "@/app/fonts";
 import { IProductParams } from '@/interfaces/product';
 
 interface Props {
@@ -19,6 +20,10 @@ export default async function AccesoriesPage({searchParams}:Props){
   }
 
   return (
+  <section className="px-3 lg:px-10">
+    <div className="w-full mb-10 lg:mb-20" >
+        <h1 className={`text-3xl xl:text-7xl mb-5 text-center text-primary-blue ${exo.className}`}>Accesorios</h1>
+      </div>
     <div className="flex flex-col lg:flex-row items-start justify-between">
       
       <AccesoriesCategories />
@@ -33,5 +38,6 @@ export default async function AccesoriesPage({searchParams}:Props){
             ))}
           </div>)}
     </div>
+  </section>
   )
 };
