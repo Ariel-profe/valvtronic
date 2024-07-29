@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation"
 
- 
 export default function Error() {
 
   const {replace} = useRouter()

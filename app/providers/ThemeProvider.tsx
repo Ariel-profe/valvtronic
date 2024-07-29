@@ -1,20 +1,9 @@
-"use client";
+"use client"
 
-import { useContext, FC, useState, useEffect, ReactNode } from 'react';
-import { UIContext } from "../../context/ui/UIContext";
+import * as React from "react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { type ThemeProviderProps } from "next-themes/dist/types";
 
-export const ThemeProvider:FC<{children: ReactNode}> = ({children}) => {
-
-    const {theme} = useContext(UIContext);
-    const [mounted, setMounted] = useState(false);
-    
-    useEffect(() => {
-      setMounted(true);
-    }, [mounted])
-    
-    if(mounted){
-        return (
-          <div className={theme}>{children}</div>
-        )
-    }
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }

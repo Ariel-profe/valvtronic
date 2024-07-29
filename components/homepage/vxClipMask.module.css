@@ -1,0 +1,38 @@
+/* Mask component */
+.container{
+  position: relative;
+  height: 180vh;
+}
+
+.stickyMask{
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mask-image: url('/assets/logo/vx.svg');
+  mask-position: 43.35% 50%;
+  mask-repeat: no-repeat;
+  mask-size: 50%;
+}
+
+.text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 650px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.stickyMask video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

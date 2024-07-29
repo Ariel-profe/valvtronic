@@ -18,7 +18,13 @@ export const categories: ICategory[] = [
         id: 3,
         name: 'accesorios',
         href: '/productos/accesorios',
-        img: '/products/categories/cat-1.webp'
+        img: '/products/categories/accesorios-de-control.webp'
+    },
+    {
+        id: 4,
+        name: 'sistemas de control',
+        href: '/productos/accesorios',
+        img: '/products/categories/sistemas-de-control.webp'
     }
 ];
 

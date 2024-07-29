@@ -1,10 +1,10 @@
-import { Categories } from "../components/products/Categories";
-import { Hero } from "../components/products/Hero";
+import { Categories } from "@/components/products/Categories"
+import { Hero } from "@/components/products/Hero"
 
 const ProductsPage = () => {
  
   return (
-    <section className="container mx-auto px-3 lg:px-6">
+    <section>
       <Hero />
       <Categories />
     </section>

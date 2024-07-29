@@ -1,4 +1,5 @@
-import { Loading } from '../components/ui/Loading';
+import { Loading } from "@/components/ui/Loading"
+
 const LoadingPage = () => {
   return (
     <div className="flex items-center justify-center h-[50vh]">

@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
-
-import { Navbar } from "@/app/components/admin/ui/Navbar";
 import { auth } from "@/auth";
-import { NullData } from "@/app/components/ui/NullData";
+import { Navbar } from "@/components/ui/Navbar";
+import { NullData } from "@/components/ui/NullData";
 
 export const metadata: Metadata = {
     title: 'Valvtronic Admin',

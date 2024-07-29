@@ -1,5 +1,6 @@
-import { getUser, getUsers } from "@/actions/user";
-import { ManageClients } from "@/app/components/admin/ManageClients";
+import { getUsers } from "@/actions/user";
+import { ManageClients } from "@/components/admin/ManageClients";
+
 
 const AdminClientsPage = async() => {
 
