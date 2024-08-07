@@ -7,14 +7,16 @@ import { cn } from "@/lib/utils";
 import { exo } from "@/app/fonts";
  
 interface WordRotateProps {
-  words: string[];
+  title: string[];
+  subtitle: string[];
   duration?: number;
   framerProps?: HTMLMotionProps<"h1">;
   className?: string;
 }
  
 export default function WordRotate({
-  words,
+  title,
+  subtitle,
   duration = 6000,
   framerProps = {
     initial: { opacity: 0, y: -50 },
@@ -28,28 +30,49 @@ export default function WordRotate({
  
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+      setIndex((prevIndex) => (prevIndex + 1) % title.length);
+      setIndex((prevIndex) => (prevIndex + 1) % subtitle.length);
     }, duration);
  
     // Clean up interval on unmount
     return () => clearInterval(interval);
-  }, [words, duration]);
+  }, [title, subtitle, duration]);
  
   return (
-    <div className="overflow-hidden py-2">
+    <div className="overflow-hidden py-2 flex flex-col lg:gap-y-10">
       <AnimatePresence mode="wait">
         <motion.h1
-          key={words[index]}
-          className={cn(className, exo.className)}
+          key={title[index]}
+          className={cn("text-3xl lg:text-7xl font-bold", className, exo.className)}
           {...framerProps}
         >
-          {words[index]}
+          {title[index]}
         </motion.h1>
+        <motion.p
+          key={subtitle[index]}
+          className={cn("text-xl lg:text-3xl text-primary-dark-grey dark:text-slate-300", className, exo.className)}
+          {...framerProps}
+        >
+          {subtitle[index]}
+        </motion.p>
       </AnimatePresence>
     </div>
   );
 };  
   
 export const WordsRotate = () => {
-  return (<WordRotate className="text-4xl lg:text-8xl max-w-[790px] font-bold text-center lg:text-start" words={["Experiencia en movimiento", "Para un mercado competitivo"]}/>);
+  return (
+    <WordRotate 
+      className="max-w-[790px] text-center lg:text-start mt-10 lg:mt-0" 
+      title={[
+        "Creamos experiencias integrales y personalizadas", 
+        "Potenciamos herramientas que impulsan el futuro", 
+        "Impulsamos soluciones para mercados competitivos"
+      ]}
+      subtitle={[
+        "Capacitaciones a medida, servicio técnico personalizado y el conocimiento técnico que tu empresa y proyectos necesitan.", 
+        "Productos de alta calidad, recursos humanos capacitados y respaldo internacional para tu próximo proyecto.", 
+        "Participamos activa y profesionalmente en proyectos específicos dentro de cada industria en nuestro país."
+      ]}
+    />);
 }

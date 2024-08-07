@@ -12,7 +12,7 @@ export const Purpose = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`flex justify-center items-center flex-col lg:mt-20 px-3 lg:px-6`}
+      className={`flex justify-center items-center flex-col`}
     >
       <TypingText title="| Propósito" textStyles="text-center" />
       <TitleText

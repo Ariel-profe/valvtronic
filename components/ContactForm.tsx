@@ -114,7 +114,7 @@ export const ContactForm = () => {
             <select 
                 name="reasonForConsult" 
                 id="reasonForConsult"
-                className='w-full py-4 px-2 outline-none bg-transparent border-primary-blue font-light border-2 text-primary-blue rounded-md transition'
+                className='w-full py-4 px-2 outline-none bg-transparent border-primary-blue border-2 text-primary-blue dark:text-slate-200 rounded-md transition'
             >
                 <option value="" disabled>--Seleccionar--</option>
                 <option value="">Consultas generales</option>

@@ -45,8 +45,9 @@ export const LoginForm = () => {
 
   return (
     <CardWrapper
-        headerLabel=""
-        backButtonLabel="¿Aún no tienes una cuenta? Registrate ahora"
+        headerLabel="Iniciar sesión"
+        backButtonQuestion="¿Aún no tienes una cuenta?"
+        backButtonLabel="Registrate ahora"
         backButtonHref="/registro"
         showSocial
     >

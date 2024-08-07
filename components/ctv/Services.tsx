@@ -2,7 +2,7 @@ import { CTVCard } from "./CTVCard"
 
 export const Services = () => {
   return (
-    <div className="container mx-auto flex flex-col gap-5 lg:my-20">
+    <div className="px-3 lg:px-6 flex flex-col gap-5 lg:my-20">
         <CTVCard 
             title={"I+D Investigación y desarrollo"} 
             subtitle={"Para convertir las ideas en soluciones prácticas y revolucionarias."} 

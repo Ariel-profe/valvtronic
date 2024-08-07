@@ -8,12 +8,12 @@ export const Social = () => {
   return (
     <div className="flex items-center w-full gap-x-2">
         <Button
-            size="lg"
-            className="w-full"
-            variant="vx"
-            onClick={() => {}}
+          size="lg"
+          className="w-full"
+          variant="vx"
+          onClick={() => {}}
         >
-            <FcGoogle className="size-5" />
+          <FcGoogle className="size-5" />
         </Button>
     </div>
   )

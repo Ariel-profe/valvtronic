@@ -42,6 +42,7 @@ export const FormInput:FC<Props> = ({id, errors, label, register, disabled, requ
                     p-2
                     outline-none
                     text-primary-blue
+                    dark:text-slate-200
                     tracking-wider
                     rounded-md
                     border-2
@@ -78,6 +79,7 @@ export const FormInput:FC<Props> = ({id, errors, label, register, disabled, requ
                 outline-none
                 rounded-md
                 text-primary-blue
+                dark:text-slate-200
                 tracking-wider
                 border-2
                 transition
@@ -109,7 +111,7 @@ export const FormInput:FC<Props> = ({id, errors, label, register, disabled, requ
                 peer-placeholder-shown:translate-y-0
                 peer-focus:scale-75
                 peer-focus:-translate-y-3
-                ${errors[id] ? 'text-rose-500' : ' text-primary-blue'}
+                ${errors[id] ? 'text-rose-500' : 'text-primary-blue dark:text-slate-200'}
             `}
         >{label}</label>
     </div>

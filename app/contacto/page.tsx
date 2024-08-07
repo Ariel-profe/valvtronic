@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 const ContactPage = async() => {
 
   return (
-    <section className="container mx-auto">
+    <section className="px-3 lg:px-6">
       <div className='grid lg:grid-cols-2 gap-3'>
         <div className={`flex flex-col gap-5 mt-10 ${exo.className}`}>
           <h1 className='text-3xl lg:text-6xl text-primary-blue max-w-[850px] '>¿Cuál es tu <br /> próximo <br /> proyecto?</h1>

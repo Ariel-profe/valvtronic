@@ -9,13 +9,14 @@ interface CardWrapperProps {
     children: React.ReactNode;
     headerLabel: string;
     backButtonLabel: string;
+    backButtonQuestion: string;
     backButtonHref: string;
     showSocial?: boolean;
 }
 
-export const CardWrapper = ({backButtonHref, backButtonLabel, children, headerLabel, showSocial}:CardWrapperProps) => {
+export const CardWrapper = ({backButtonHref, backButtonLabel, backButtonQuestion, children, headerLabel, showSocial}:CardWrapperProps) => {
   return (
-    <Card className="w-[400px] bg-transparent">
+    <Card className="px-3 bg-transparent">
         <CardHeader>
             <Header label={headerLabel} />
         </CardHeader>
@@ -30,6 +31,7 @@ export const CardWrapper = ({backButtonHref, backButtonLabel, children, headerLa
         <CardFooter>
             <BackButton 
                 label={backButtonLabel}
+                question={backButtonQuestion}
                 href={backButtonHref}
             />
         </CardFooter>

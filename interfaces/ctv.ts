@@ -1,7 +1,8 @@
 
 export interface IProfile {
     id: number;
-    name: string;
+    title: string;
+    subtitle: string;
     desc: string;
     img: string;
 }

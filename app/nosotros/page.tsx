@@ -9,7 +9,7 @@ const About = () => (
     <HeroSection
       imgUrl="/assets/about/hero.webp"
       subheading="Nosotros"
-      heading="Nuestra gente, los que hacen posible el crecimiento constante."
+      heading="Nuestra gente, la que hace posible el crecimiento constante."
     />
     <Purpose />
     <AccordionMenu />

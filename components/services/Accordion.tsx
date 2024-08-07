@@ -7,40 +7,26 @@ import {
 
 export const AccordionMenu = () => {
     return ( 
-        <div className="mt-10 container">
+        <div className="w-full lg:w-7/12">
             <Accordion type="single" collapsible className="grid space-y-3">
                 <AccordionItem value="item-1">
-                    <AccordionTrigger>Soluciones inteligentes</AccordionTrigger>
+                    <AccordionTrigger>Soporte y asistencia</AccordionTrigger>
                     <AccordionContent>
-                        Trabajamos para lograr la superioridad en cada uno de los productos y servicios que ofrecemos a nuestros clientes. Nos adaptamos a nuevos escenarios, animándonos a buscar nuevos caminos e intercambiando conocimiento y experiencia con colegas. La calidad está en la experiencia conjunta.
+                        Un equipo formado tanto para dar soluciones a inconvenientes técnicos y reparaciones, como para realizar mantenimiento industrial o incluso brindar el asesoramiento necesario para garantizar el funcionamiento adecuado de cada producto en campo.
                     </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2">
-                    <AccordionTrigger>Personalizadas</AccordionTrigger>
+                    <AccordionTrigger>Conocimiento espécífico</AccordionTrigger>
                     <AccordionContent>
-                        Podes hacerlo desde esta misma sección con el formulario de contacto (nos llegará un mail), o a través de nuestras redes que están colocadas en el pie de todas las páginas.
+                        Información personalizada, específica e inteligente a todos los profesionales que se desarrollen en las industrias con control de fluidos.
                     </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-3">
-                    <AccordionTrigger>Empresas</AccordionTrigger>
+                    <AccordionTrigger>Intercambio y aprendizaje</AccordionTrigger>
                     <AccordionContent>
-                        Muchos. Según tus necesidades nosotros abordarmos y planificamos el plan que se ajuste a vos. Todos nuestros planes se pueden modificar sin ningún problema para hacerlo perfecto a tu medida.
-                    </AccordionContent>
-                </AccordionItem>
-            
-                <AccordionItem value="item-4">
-                    <AccordionTrigger>Desarrollar y mejorar</AccordionTrigger>
-                    <AccordionContent>
-                        Te ofrecemos un soporte activo, en el que vas a poder contactarte con nosotros sin barreras ni problemas. Tus necesidades son de nuestra incumbencia.
-                    </AccordionContent>
-                </AccordionItem>
-
-                <AccordionItem value="item-5">
-                    <AccordionTrigger>Control de fluidos</AccordionTrigger>
-                    <AccordionContent>
-                        Te ofrecemos un soporte activo, en el que vas a poder contactarte con nosotros sin barreras ni problemas. Tus necesidades son de nuestra incumbencia.
+                        Desarrollo de habilidades prácticas y conocimientos específicos de productos y tecnologías, para minimizar los errores humanos y extender la vida útil de los mismos.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

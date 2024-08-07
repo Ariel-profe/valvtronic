@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="es" className='dark'>
       <link rel="icon" href="/assets/logo/vx-blanco.svg" sizes="any" />
-      <body className={`${montserrat.className} bg-slate-100 dark:bg-slate-900 text-primary-blue dark:text-slate-200 max-w-[1990px] mx-auto`}>
+      <body className={`${montserrat.className} bg-slate-100 dark:bg-gray-900 text-primary-blue max-w-[1990px] mx-auto`}>
         <Providers>
           <div className='relative flex flex-col'>
             <Navbar />

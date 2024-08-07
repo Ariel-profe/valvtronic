@@ -22,6 +22,7 @@ const SearchPage = () => {
 
   return (
     <section className="container mx-auto px-3 lg:px-6 min-h-[50vh]">
+
       <div className="flex relative items-center bg-white mt-10 shadow-xl">
         <input 
           type="text" 
@@ -37,7 +38,7 @@ const SearchPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 mt-10 lg:mt-20 lg:ml-20">
+      <div className="flex items-center gap-5 mt-10 lg:mt-20">
         <h2 className="text-2xl lg:text-6xl">Búsquedas <br /> populares</h2>
 
         <div className="text-primary-dark-grey mt-5 flex flex-col gap-y-2 underline lg:text-2xl">

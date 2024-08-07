@@ -40,13 +40,13 @@ export const IndustrialTrainning = ({
   const thirdPart = images.slice(2 * third);
 
   return (
-    <div className={cn("h-screen items-start overflow-y-auto w-full my-10 lg:my-20 no-scrollbar", className)} ref={gridRef}>
+    <>
       <motion.div
         variants={staggerContainer(1,0.2)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className={`w-full mx-auto flex flex-col`}
+        className={`w-full mx-auto flex flex-col mt-10 lg:mt-20`}
       >
         <TypingText title="| Formación industrial" textStyles="text-center" />
         <TitleText
@@ -54,22 +54,23 @@ export const IndustrialTrainning = ({
           textStyles="text-center"
         />
         </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start mx-auto gap-10 py-40 px-10" ref={gridRef}>
-        <div className="grid gap-10">
+    <div className={cn("h-screen items-start overflow-y-auto w-full mt-10 lg:my-20 no-scrollbar", className)} ref={gridRef}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start mx-auto lg:gap-10 lg:py-40" ref={gridRef}>
+        <div className="grid gap-5 lg:gap-10">
           {firstPart.map((el, idx) => (
             <motion.div
-              style={{ y: translateFirst }} // Apply the translateY motion value here
+            style={{ y: translateFirst }} // Apply the translateY motion value here
               key={"grid-1" + idx}
             >
               <img
                 src={`/assets/homepage/industrial-trainning/${el}`}
                 className="h-80 w-full object-cover object-left-top rounded-lg gap-10 !m-0 !p-0 "
                 alt="imagen"
-              />
+                />
             </motion.div>
           ))}
         </div>
-        <div className="grid gap-10">
+        <div className="hidden lg:grid gap-10">
           {secondPart.map((el, idx) => (
             <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
               <img
@@ -78,11 +79,11 @@ export const IndustrialTrainning = ({
                 height="400"
                 width="400"
                 alt="imagen"
-              />
+                />
             </motion.div>
           ))}
         </div>
-        <div className="grid gap-10">
+        <div className="hidden lg:grid gap-10">
           {thirdPart.map((el, idx) => (
             <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
               <img
@@ -91,11 +92,12 @@ export const IndustrialTrainning = ({
                 height="400"
                 width="400"
                 alt="imagen"
-              />
+                />
             </motion.div>
           ))}
         </div>
       </div>
     </div>
+  </>
   );
 };

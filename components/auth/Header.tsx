@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import { Poppins } from "next/font/google";
+import { cn } from "@/lib/utils";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -14,7 +14,7 @@ export const Header = ({label = ""}:HeaderProps) => {
   return (
     <div className="w-full flex flex-col gap-y-4 items-center justify-center">
         <h1 className={cn(
-            "text-3xl lg:text-5xl font-semibold text-primary-blue",
+            "text-2xl lg:text-3xl font-semibold text-primary-blue",
             poppins.className
         )}>
             ¡Te damos la bienvenida!

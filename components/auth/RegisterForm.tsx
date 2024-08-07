@@ -53,11 +53,12 @@ export const RegisterForm = () => {
 
   return (
     <CardWrapper
-        headerLabel="Crear una cuenta"
-        backButtonLabel="¿Ya tienes cuenta? Inicia sesión"
-        backButtonHref="/login"
-        showSocial
-    >
+          headerLabel="Crear una cuenta"
+          backButtonLabel="Inicia sesión"
+          backButtonHref="/login"
+          backButtonQuestion={"¿Ya tienes cuenta? "}
+          showSocial 
+        >
         <Form {...form}>
             <form 
                 className="space-y-6"
